@@ -1,0 +1,71 @@
+{
+  "name": "pokemon-desktop-pet",
+  "version": "1.0.0",
+  "description": "Un Pokémon animato per la tua desktop tray su Windows",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "pack": "electron-builder --dir",
+    "clean": "rm -rf dist node_modules",
+    "rebuild": "npm run clean && npm install && npm run build",
+     "build-icons": "electron-icon-builder --input=assets/icon.png --output=assets --flatten"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LorenzoScalvini/Pokemon-desktop-pet.git"
+  },
+  "keywords": [
+    "pokemon",
+    "desktop",
+    "pet",
+    "electron",
+    "tray"
+  ],
+  "author": "Lorenzo Scalvini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LorenzoScalvini/Pokemon-desktop-pet/issues"
+  },
+  "homepage": "https://github.com/LorenzoScalvini/Pokemon-desktop-pet#readme",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.pokemon.desktoppet",
+    "productName": "Pokémon Desktop Pet",
+    "copyright": "Copyright © 2024",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico",
+      "publish": null
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico"
+    },
+    "extraResources": [
+      {
+        "from": "assets/",
+        "to": "assets/",
+        "filter": ["**/*"]
+      }
+    ]
+  }
+}
