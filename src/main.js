@@ -47,7 +47,7 @@ function createWindow() {
 
 function setupTray() {
   const icon = nativeImage.createFromPath(
-    path.join(__dirname, "assets/icon.ico")
+    path.join(__dirname, "../assets/icon.ico")
   );
   tray = new Tray(icon.resize({ width: 16, height: 16 }));
 
