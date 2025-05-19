@@ -1,13 +1,33 @@
-const { app, BrowserWindow, Tray, nativeImage, Menu } = require("electron");
+const {
+  app,
+  BrowserWindow,
+  Tray,
+  nativeImage,
+  Menu,
+  screen,
+} = require("electron");
 const path = require("path");
 
 let mainWindow = null;
 let tray = null;
 
 function createWindow() {
+  const primaryDisplay = screen.getPrimaryDisplay();
+  const { width, height } = primaryDisplay.workAreaSize;
+
+  const windowWidth = 250;
+  const windowHeight = 150;
+  const rightMargin = 20;
+  const bottomMargin = 10;
+
+  const x = width - windowWidth - rightMargin;
+  const y = height - windowHeight - bottomMargin;
+
   mainWindow = new BrowserWindow({
-    width: 250,
-    height: 150,
+    width: windowWidth,
+    height: windowHeight,
+    x: x,
+    y: y,
     frame: false,
     transparent: true,
     webPreferences: {
@@ -15,10 +35,13 @@ function createWindow() {
       contextIsolation: false,
       sandbox: false,
     },
+    alwaysOnTop: true,
+    skipTaskbar: true,
   });
 
-  mainWindow.loadFile(path.join(__dirname, "index.html"));
+  mainWindow.setAlwaysOnTop(true, "normal");
 
+  mainWindow.loadFile(path.join(__dirname, "index.html"));
   setupTray();
 }
 
