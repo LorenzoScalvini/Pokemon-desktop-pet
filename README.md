@@ -57,21 +57,6 @@ A lightweight Electron-based desktop pet featuring Lugia with smooth animations 
 - Image-rendering set to `pixelated` for crisp sprites
 - Efficient requestAnimationFrame-based animation
 
-## 📝 Customization Options
-
-```javascript
-// In index.js
-const CONFIG = {
-  movementSpeed: 1, // Pixels per frame
-  animationInterval: 50, // ms between frames
-  edgePauseDuration: 500, // ms at screen edges
-  minMovesBeforeIdle: 50, // Minimum movements before idle
-  maxMovesBeforeIdle: 300, // Maximum movements before idle
-  minIdleDuration: 1000, // Minimum idle time (ms)
-  maxIdleDuration: 3000, // Maximum idle time (ms)
-};
-```
-
 ## 📌 Requirements
 
 - Node.js v14+
