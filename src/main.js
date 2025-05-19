@@ -16,7 +16,7 @@ function createWindow() {
   const { width, height } = primaryDisplay.workAreaSize;
 
   const windowWidth = 250;
-  const windowHeight = 150;
+  const windowHeight = 100;
   const rightMargin = 20;
   const bottomMargin = 10;
 
