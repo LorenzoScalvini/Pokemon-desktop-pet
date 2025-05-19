@@ -28,20 +28,6 @@ A lightweight Electron-based desktop pet featuring Lugia with smooth animations 
   - System tray control
   - Cross-platform compatibility
 
-## 🚀 Installation & Usage
-
-```bash
-# Clone repository
-git clone https://github.com/your-repo/pokemon-desktop-pet.git
-cd pokemon-desktop-pet
-
-# Install dependencies
-npm install
-
-# Run application
-npm start
-```
-
 ## ⚙️ Technical Implementation
 
 ### Animation System (index.js)
