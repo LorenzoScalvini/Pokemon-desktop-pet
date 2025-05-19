@@ -65,4 +65,4 @@ A lightweight Electron-based desktop pet featuring Lugia with smooth animations 
 
 ## 📜 License
 
-MIT License - Free for personal and commercial use
+Free for personal use
