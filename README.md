@@ -12,6 +12,8 @@ A lightweight Electron-based desktop pet featuring Lugia with smooth animations 
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-14+-339933?style=for-the-badge&logo=node.js&logoColor=white)
 
+![Lugia Idle](assets/lugia-pokemon.gif)
+
 ## ✨ Features
 
 - **Multi-sprite animation system**:
