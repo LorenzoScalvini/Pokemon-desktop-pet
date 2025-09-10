@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const pokemon = document.getElementById("pokemon");
+  const walkingArea = document.getElementById("walking-area");
   let leftPosition = 0;
   let direction = 1;
   let spriteIndex = 0;
@@ -12,9 +13,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const MAX_MOVES_BEFORE_IDLE = 300;
   const MIN_IDLE_DURATION = 1000;
   const MAX_IDLE_DURATION = 3000;
+  let maxWidth = 0;
 
   const walkingSprites = ["../assets/walking1.gif", "../assets/walking2.gif"];
   const idleSprite = "../assets/idle.gif";
+
+  // Calcola la larghezza massima in base all'area di movimento
+  function calculateMaxWidth() {
+    if (walkingArea) {
+      maxWidth = walkingArea.offsetWidth - pokemon.offsetWidth;
+    } else {
+      maxWidth = window.innerWidth / 2 - pokemon.offsetWidth;
+    }
+  }
+
+  // Gestione audio nel DOM
+  const audio = document.getElementById("ost");
+  const playButton = document.getElementById("play-button");
+  const volumeControl = document.getElementById("volume-control");
+  
+  // Inizializza audio in muto
+  if (audio && playButton && volumeControl) {
+    audio.volume = 0;
+    
+    playButton.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "🔊";
+      } else {
+        audio.pause();
+        playButton.textContent = "🔇";
+      }
+    });
+    
+    volumeControl.addEventListener("input", () => {
+      audio.volume = volumeControl.value;
+      if (audio.volume > 0 && audio.paused) {
+        audio.play();
+        playButton.textContent = "🔊";
+      }
+    });
+  }
 
   function changeSprite() {
     if (pokemon && !isPaused && !isIdle) {
@@ -56,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     leftPosition += 1 * direction;
 
-    if (leftPosition >= 200 || leftPosition <= 0) {
+    if (leftPosition >= maxWidth || leftPosition <= 0) {
       isPaused = true;
       direction = -direction;
       pokemon.style.transform = direction === 1 ? "scaleX(1)" : "scaleX(-1)";
@@ -77,6 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (pokemon) {
+    calculateMaxWidth();
+    window.addEventListener('resize', calculateMaxWidth);
+    
     nextIdleThreshold =
       MIN_MOVES_BEFORE_IDLE +
       Math.random() * (MAX_MOVES_BEFORE_IDLE - MIN_MOVES_BEFORE_IDLE);

@@ -1,18 +1,69 @@
 body {
   margin: 0;
   padding: 0;
-  width: 200px;
-  height: 100px;
-  position: relative;
-  background-size: cover;
+  width: 100vw;
+  height: 80px; 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#audio-container {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border-radius: 12px;
+  z-index: 100;
+  margin-bottom: 12px;
+}
+
+#play-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#play-button:hover {
+  background-color: rgba(73, 73, 73, 0.1);
+  scale: 1.1;
+}
+
+#volume-control {
+  width: 80px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+#walking-area {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%; 
+  height: 100%;
 }
 
 img#pokemon {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  bottom: 10px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
   left: 0;
   transition: left 0.3s ease;
   image-rendering: pixelated;

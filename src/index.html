@@ -6,7 +6,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <img id="pokemon" src="./assets/walking1.gif" alt="Pokémon" />
+    <!-- Contenitore per l'audio -->
+    <div id="audio-container">
+      <audio id="ost" loop>
+        <source src="../assets/ost.mp3" type="audio/mp3">
+        Il tuo browser non supporta l'elemento audio.
+      </audio>
+      <button id="play-button">🔇</button>
+      <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0">
+    </div>
+
+    <!-- Area movimento Lugia -->
+    <div id="walking-area">
+      <img id="pokemon" src="../assets/walking1.gif" alt="Lugia" />
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>

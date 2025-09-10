@@ -14,13 +14,11 @@ let tray = null;
 function createWindow() {
   const primaryDisplay = screen.getPrimaryDisplay();
   const { width, height } = primaryDisplay.workAreaSize;
+  const windowWidth = width;
+  const windowHeight = 80; 
+  const bottomMargin = 0;
 
-  const windowWidth = 250;
-  const windowHeight = 100;
-  const rightMargin = 20;
-  const bottomMargin = 10;
-
-  const x = width - windowWidth - rightMargin;
+  const x = 0;
   const y = height - windowHeight - bottomMargin;
 
   mainWindow = new BrowserWindow({
@@ -37,6 +35,7 @@ function createWindow() {
     },
     alwaysOnTop: true,
     skipTaskbar: true,
+    resizable: false 
   });
 
   mainWindow.setAlwaysOnTop(true, "normal");
