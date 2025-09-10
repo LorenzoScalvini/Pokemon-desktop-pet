@@ -5,7 +5,6 @@
 A lightweight Electron-based desktop pet featuring Lugia with smooth animations and random behaviors.
 
 ## 🎥 Video Demo
-
 <video width="320" height="240" controls>
   <source src="assets/lugia-demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
