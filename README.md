@@ -4,6 +4,13 @@
 
 A lightweight Electron-based desktop pet featuring Lugia with smooth animations and random behaviors.
 
+## 🎥 Video Demo
+
+<video width="320" height="240" controls>
+  <source src="assets/lugia-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## 🛠 Tech Stack
 
 ![Electron](https://img.shields.io/badge/Electron-2B2E3A?style=for-the-badge&logo=electron&logoColor=white)
