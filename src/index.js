@@ -31,9 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("ost");
   const playButton = document.getElementById("play-button");
   const volumeControl = document.getElementById("volume-control");
+  const volumeValue = document.getElementById("volume-value");
   
   // Inizializza audio in muto
-  if (audio && playButton && volumeControl) {
+  if (audio && playButton && volumeControl && volumeValue) {
     audio.volume = 0;
     
     playButton.addEventListener("click", () => {
@@ -47,8 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     volumeControl.addEventListener("input", () => {
-      audio.volume = volumeControl.value;
-      if (audio.volume > 0 && audio.paused) {
+      const volume = volumeControl.value / 100;
+      audio.volume = volume;
+      volumeValue.textContent = `${volumeControl.value}%`;
+      
+      if (volume > 0 && audio.paused) {
         audio.play();
         playButton.textContent = "🔊";
       }

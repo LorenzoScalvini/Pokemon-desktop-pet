@@ -38,17 +38,93 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 #play-button:hover {
-  background-color: rgba(73, 73, 73, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   scale: 1.1;
+}
+
+.volume-control-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 #volume-control {
   width: 80px;
   margin-top: 8px;
   cursor: pointer;
+  -webkit-appearance: none;
+  height: 4px;
+  background: #444;
+  border-radius: 2px;
+  outline: none;
+}
+
+/* Personalizzazione per Chrome, Safari */
+#volume-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 1px solid #333;
+}
+
+#volume-control::-webkit-slider-track {
+  width: 100%;
+  height: 4px;
+  background: #444;
+  border-radius: 2px;
+  border: none;
+}
+
+/* Personalizzazione per Firefox */
+#volume-control::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 1px solid #333;
+}
+
+#volume-control::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  background: #444;
+  border-radius: 2px;
+  border: none;
+}
+
+/* Personalizzazione per Edge */
+#volume-control::-ms-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 1px solid #333;
+}
+
+#volume-control::-ms-track {
+  width: 100%;
+  height: 4px;
+  background: #444;
+  border-radius: 2px;
+  border: none;
+  color: transparent;
+}
+
+#volume-value {
+  color: white;
+  font-size: 10px;
+  margin-top: 4px;
+  font-family: Arial, sans-serif;
 }
 
 #walking-area {
